@@ -2,9 +2,6 @@ import streamlit as st
 from time import sleep
 import services.connect as C
 
-
-
-
 st.title("Bem vindo ao app de insucesso do Magazine Luiza.")
 
 User = st.selectbox('Usuário', C.transportadoras())
