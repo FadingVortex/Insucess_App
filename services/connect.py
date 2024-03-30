@@ -39,5 +39,11 @@ def transportadoras():
         trans.append(tr[0])
     return trans
 
+def motivos():
+    motivos = base_cad.get_values('m2:m')
+    mot = []
+    for m in motivos:
+        mot.append(m)
+    return mot
     
 
