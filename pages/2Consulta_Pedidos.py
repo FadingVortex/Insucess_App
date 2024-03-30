@@ -17,4 +17,4 @@ user = st.session_state['Usuário']
 st.title("Consulta de Pedidos")
 
 
-st.table(C.verificar_pedidos(user))
+st.dataframe(C.verificar_pedidos(user), hide_index=False)
