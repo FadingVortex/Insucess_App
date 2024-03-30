@@ -32,4 +32,4 @@ with st.form('Inserir Insucesso'):
         streamlit_js_eval(js_expressions="parent.window.location.reload()")
     elif submit_button:
         st.write("Favor verifique os dados inseridos.")
-        st.rerun()
+    
