@@ -43,7 +43,7 @@ def motivos():
     motivos = base_cad.get_values('m2:m')
     mot = []
     for m in motivos:
-        mot.append(m)
+        mot.append(m[0])
     return mot
     
 

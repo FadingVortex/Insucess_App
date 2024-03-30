@@ -18,7 +18,8 @@ st.title('Cadastro de insucesso.')
 
 with st.form('Inserir Insucesso'):
     pedido = st.number_input("Pedido", step=1)
-    transportadora = st.selectbox('Transportadora', st.session_state['Usuário'])
+    
+    transportadora = st.text_input('Transportadora', value=st.session_state['Usuário'])
     motivo = st.selectbox('Motivo', C.motivos())
     obs = st.text_input("Observação")
 
