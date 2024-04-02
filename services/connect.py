@@ -1,7 +1,7 @@
 import gspread as gs
 from oauth2client.service_account import ServiceAccountCredentials
 import pandas as pd
-from datetime import datetime
+from datetime import datetime, timedelta
 
 scope = ['https://spreadsheets.google.com/feeds',
         'https://www.googleapis.com/auth/drive'] 
@@ -24,7 +24,9 @@ def verificar_pedidos(usuario):
 
 def inserir_pedido(pedido, transportadora, motivo, observacao):
     try:
-        registro = datetime.now().strftime('%d/%m/%Y %H:%M:%S')
+        registro = datetime.now() - timedelta(hours=3)
+        registro = registro.strftime('%d/%m/%Y %H:%M:%S')
+        
         last_row = len(base_insucessos.get_values('a1:a')) + 1
         r = 'a'+ str(last_row)
         base_insucessos.update([[str(registro), str(pedido), str(motivo), str(observacao), str(transportadora)]], r)
