@@ -31,6 +31,7 @@ c1, c2 = st.columns(2)
 c1.page_link('./pages/HomePage.py', label='Home')
 c2.page_link('./pages/1Registro_insucesso.py',label='Registrar Insucesso')
 
+st.title('Cadastro De Devolução')
 
 with st.form(key='Form-Dev', clear_on_submit=True):
     pedido = st.number_input("Pedido", step=1)

@@ -33,7 +33,7 @@ c2.page_link('./pages/3Registro_devolucao.py',label='Registrar Devolução')
 
 
 
-st.title('Cadastro de insucesso.')
+st.title('Cadastro De Insucesso')
 
 
 with st.form('Inserir Insucesso'):
