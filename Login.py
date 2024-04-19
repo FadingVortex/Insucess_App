@@ -5,7 +5,9 @@ import services.connect as C
 with open('./frontend/LoginPageStyle.css') as f:
     st.markdown(f"<style>{f.read()}</style>",unsafe_allow_html=True)
 
-st.title("Transportadoras Magalu 2650")
+st.title("MagaTrack")
+
+st.subheader("Transportadoras Magalu 2650")
 
 with st.form(key="form-login",clear_on_submit=True):
     User = st.selectbox('Usuário', C.transportadoras())
