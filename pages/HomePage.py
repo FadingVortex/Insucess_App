@@ -1,6 +1,9 @@
 import streamlit as st 
 
-
+try:
+    user = st.session_state['Usuário']
+except:
+    st.switch_page('./Login.py')
 
 with open("./frontend/HomePageStyle.css") as f:
     teste = st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
