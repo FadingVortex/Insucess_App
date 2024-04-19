@@ -1,6 +1,7 @@
 import streamlit as st
 from services.connect import registro_dev
 from time import sleep
+from streamlit_js_eval import streamlit_js_eval
 
 
 
@@ -42,7 +43,9 @@ with st.form(key='Form-Dev', clear_on_submit=True):
         with st.spinner("Carregando..."):
             verify, mensagem = registro_dev(pedido,user,arquivo,destino)
             if verify == 'Sucesso':
-                st.success(mensagem)
+                st.write(mensagem)
+                sleep(1)
+                streamlit_js_eval(js_expressions="parent.window.location.reload()")
             else:
                 st.error(mensagem)
     elif button:
