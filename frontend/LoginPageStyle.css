@@ -1,0 +1,87 @@
+.e10yg2by1 {
+  background-color: #0086ff;
+  box-shadow: 10px 10px 2px rgba(0, 0, 0, 0.1);
+}
+.e1nzilvr2,
+.e1y5xkzn3,
+.stButton {
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.stButton {
+  width: 100px;
+}
+
+[class="st-ak st-al st-bc st-bd st-be st-as st-bf st-bg st-ar st-bh st-bi st-bj st-bk"] {
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin-left: 5%;
+}
+
+[class="st-ak st-bt st-cv st-cw st-cx st-cy st-bu st-bw st-bv st-bx st-bz st-am st-cz st-bo st-au st-d0 st-bh st-bi st-bj st-bk st-ae st-af st-ag st-ah st-ai st-aj st-b6 st-d1 st-d2 st-d3"] {
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.e1nzilvr2 > h1 {
+  color: #0086ff;
+  text-shadow: 5px 5px 2px rgba(0, 0, 0, 0.1);
+}
+
+.e1nzilvr5 > p {
+  color: #ffffff;
+  font-size: large;
+}
+
+.st-emotion-cache-10fz3ls > p {
+  color: #0086ff;
+}
+
+.cores-container {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+.cores-span {
+  width: 10%;
+  height: 10px;
+}
+.amarelo {
+  background-color: #ffce00;
+  border-bottom-left-radius: 10px;
+  border-top-left-radius: 10px;
+}
+.laranja {
+  background-color: #fb9600;
+}
+.vermelho {
+  background-color: #e25335;
+}
+.rosa {
+  background-color: #de349e;
+}
+.roxo {
+  background-color: #bf2fdc;
+}
+.azul {
+  background-color: #5d33d5;
+}
+.azul-escuro {
+  background-color: #2b7cd7;
+}
+.azul-claro {
+  background-color: #33c3dd;
+}
+.verde {
+  background-color: #32d9a1;
+}
+.verde-claro {
+  background-color: #3fcb2a;
+  border-bottom-right-radius: 10px;
+  border-top-right-radius: 10px;
+}

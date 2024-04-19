@@ -1,0 +1,71 @@
+[class="st-emotion-cache-zt5igj e1nzilvr4"],
+[class="st-emotion-cache-j7qwjs e11k5jya2"] {
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.st-emotion-cache-j7qwjs {
+  background-color: #ffffff;
+  border-radius: 10px;
+}
+
+.ea3mdgi5 {
+  margin-top: 10%;
+  background-color: #0086ff !important;
+  border-radius: 10px;
+  display: block;
+}
+
+[class="st-emotion-cache-10fz3ls e1nzilvr5"] {
+  color: #0086ff;
+  font-size: large;
+  font-weight: bold;
+}
+
+.e1nzilvr1 {
+  color: #ffffff;
+  font-size: larger;
+  font-weight: bold;
+}
+
+.cores-container {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+.cores-span {
+  width: 10%; /* Define a largura de cada bloco */
+  height: 10px;
+}
+.amarelo {
+  background-color: #ffce00;
+}
+.laranja {
+  background-color: #fb9600;
+}
+.vermelho {
+  background-color: #e25335;
+}
+.rosa {
+  background-color: #de349e;
+}
+.roxo {
+  background-color: #bf2fdc;
+}
+.azul {
+  background-color: #5d33d5;
+}
+.azul-escuro {
+  background-color: #2b7cd7;
+}
+.azul-claro {
+  background-color: #33c3dd;
+}
+.verde {
+  background-color: #32d9a1;
+}
+.verde-claro {
+  background-color: #3fcb2a;
+}

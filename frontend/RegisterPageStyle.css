@@ -1,0 +1,71 @@
+.e10yg2by1,
+.e1f1d6gn5 {
+  background-color: #0086ff;
+  box-shadow: 10px 10px 2px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+
+.e1nzilvr2 > h1 {
+  color: #0086ff;
+  text-shadow: 5px 5px 2px rgba(0, 0, 0, 0.1);
+}
+
+[class="st-emotion-cache-zt5igj e1nzilvr4"],
+[class="st-emotion-cache-j7qwjs e11k5jya2"],
+.stButton,
+.e1y5xkzn3 {
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+[class="st-emotion-cache-l9bjmx e1nzilvr5"] > p,
+[class="st-emotion-cache-10fz3ls e1nzilvr5"] > p {
+  color: #ffffff;
+  font-size: large;
+}
+
+.cores-container {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+.cores-span {
+  width: 10%;
+  height: 10px;
+}
+.amarelo {
+  background-color: #ffce00;
+  border-bottom-left-radius: 10px;
+  border-top-left-radius: 10px;
+}
+.laranja {
+  background-color: #fb9600;
+}
+.vermelho {
+  background-color: #e25335;
+}
+.rosa {
+  background-color: #de349e;
+}
+.roxo {
+  background-color: #bf2fdc;
+}
+.azul {
+  background-color: #5d33d5;
+}
+.azul-escuro {
+  background-color: #2b7cd7;
+}
+.azul-claro {
+  background-color: #33c3dd;
+}
+.verde {
+  background-color: #32d9a1;
+}
+.verde-claro {
+  background-color: #3fcb2a;
+  border-bottom-right-radius: 10px;
+  border-top-right-radius: 10px;
+}
