@@ -26,14 +26,14 @@ def verificar_pedidos(usuario):
     
     return df.sort_values('Registro', ascending=False)
 
-def inserir_pedido(pedido, transportadora, motivo, observacao):
+def inserir_pedido(pedido, transportadora, motivo, observacao, filial):
     try:
         registro = datetime.now() - timedelta(hours=3)
         registro = registro.strftime('%d/%m/%Y %H:%M:%S')
         
         last_row = len(base_insucessos.get_values('a1:a')) + 1
         r = 'a'+ str(last_row)
-        base_insucessos.update([[str(registro), str(pedido), str(motivo), str(observacao), str(transportadora)]], r)
+        base_insucessos.update([[str(registro), str(pedido), str(motivo), str(observacao), str(transportadora), str(filial)]], r)
         return 'Pedido registrado com sucesso!'
     except:
         return 'Ocorreu um erro, favor tente novamente!'

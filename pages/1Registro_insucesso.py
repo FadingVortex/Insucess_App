@@ -42,11 +42,12 @@ with st.form('Inserir Insucesso'):
     transportadora = st.text_input('Transportadora', value=st.session_state['Usuário'])
     motivo = st.selectbox('Motivo', C.motivos())
     obs = st.text_input("Observação")
+    filial = st.text_input("Filial")
 
     submit_button = st.form_submit_button("Registrar",type='primary')
 
-    if submit_button and pedido > 0 and transportadora != '' and motivo != '' and obs != '':
-        mensagem = C.inserir_pedido(pedido, transportadora, motivo, obs)
+    if submit_button and pedido > 0 and transportadora != '' and motivo != '' and obs != '' and filial != '':
+        mensagem = C.inserir_pedido(pedido, transportadora, motivo, obs, filial)
         st.write(mensagem)
         sleep(2)
         streamlit_js_eval(js_expressions="parent.window.location.reload()")
