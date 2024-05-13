@@ -20,7 +20,7 @@ base_devolucoes = client.open_by_key('1eqYyWwshEQPo0DpkhdgrG2ZLycJrj8kGprgRoHrnA
 
 def inserir_pedido(pedido, transportadora, motivo, observacao, filial):
     try:
-        pedidos = base_insucessos.get_values('a1:a')
+        pedidos = base_insucessos.get_values('b1:b')
         if pedido in pedidos:
             return 'Pedido já cadastrado'
         registro = datetime.now() - timedelta(hours=3)
