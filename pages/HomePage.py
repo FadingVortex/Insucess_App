@@ -13,7 +13,7 @@ st.title('O que você deseja?')
 c1, c2, c3 = st.columns(3)
 c1.page_link('./pages/1Registro_insucesso.py', label='Registro de Insucesso')
 c2.page_link('./pages/3Registro_devolucao.py', label='Registro de Devolução')
-c3.page_link('./pages/3Preventivo.py', label='Preventivo')
+c3.page_link('./pages/4Preventivo.py', label='Preventivo')
 
 st.markdown("""<div class="cores-container">
     <span class="cores-span amarelo"></span>
