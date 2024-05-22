@@ -20,7 +20,7 @@ df = preventivo(st.session_state['Usuário'])
 
 
 
-df['DATA_ENTREGA_PREVISTA'] = pd.to_datetime(df['DATA_ENTREGA_PREVISTA'], format='%d/%m/%Y').sort_values('DATA_ENTREGA_PREVISTA').fillna(0)
+df['DATA_ENTREGA_PREVISTA'] = pd.to_datetime(df['DATA_ENTREGA_PREVISTA'], format='%d/%m/%Y').sort_values('DATA_ENTREGA_PREVISTA')
 pedidos =  pd.pivot_table(df, 'PEDIDO' ,'STATUS PRAZO', 'DATA_ENTREGA_PREVISTA', 'nunique')
 
 st.dataframe(pedidos)
