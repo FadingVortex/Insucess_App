@@ -1,5 +1,6 @@
 import streamlit as st
 from services.connect import preventivo
+import pandas as pd
 
 
 try:
@@ -18,6 +19,8 @@ st.title('Pedidos Pendentes')
 df = preventivo(st.session_state['Usuário'])
 
 pedidos = df.groupby('STATUS PRAZO').agg({'PEDIDO':'nunique'})
+
+df['DATA_ENTREGA_PREVISTA'] = pd.to_datetime(df['DATA_ENTREGA_PREVISTA'], format='d%/%m/%Y')
 
 
 st.dataframe(pedidos)
