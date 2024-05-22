@@ -15,7 +15,14 @@ drive_service = build('drive', 'v3', credentials=credentials)
 base_insucessos = client.open_by_key('1SjqHE5LsPYCCldD7ZoXMKFrRGE1oD9FdhK7uHZ8S8Co').worksheet('Insucessos')
 base_cad = client.open_by_key('1SjqHE5LsPYCCldD7ZoXMKFrRGE1oD9FdhK7uHZ8S8Co').worksheet('CAD')
 base_devolucoes = client.open_by_key('1eqYyWwshEQPo0DpkhdgrG2ZLycJrj8kGprgRoHrnAGc').worksheet('Comprovantes')
+base_preventivo = client.open_by_key('1gPbStQWesvP3SyUB9r3RmiqHTKncrfFoOlCo_kzaRMU').worksheet('Base SQL')
 
+
+def preventivo(transportadora):
+    log_data = base_preventivo.get_values('a1:q')
+    df = pd.DataFrame(log_data[1:], columns=log_data[0])
+    df = df.loc[(df['TRANSPORTADOR_TRACK'] == transportadora) & (df['FINALIZADOR'] == 'PENDENTE')] 
+    return df[['PEDIDO','STATUS PRAZO','DATA_ENTREGA_PREVISTA']]
 
 
 def inserir_pedido(pedido, transportadora, motivo, observacao, filial):
