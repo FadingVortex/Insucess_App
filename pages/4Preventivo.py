@@ -10,4 +10,11 @@ except:
 
 st.title('Pedidos Pendentes')
 
-st.dataFrame(preventivo(st.session_state['Usuário']))
+df = preventivo(st.session_state['Usuário'])
+
+pedidos = df.groupby('STATUS PRAZO').agg({'PEDIDO':'nunique'})
+
+
+st.dataframe(pedidos)
+
+st.dataframe(df)
