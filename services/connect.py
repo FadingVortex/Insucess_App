@@ -22,7 +22,7 @@ def preventivo(transportadora):
     log_data = base_preventivo.get_values('a1:q')
     df = pd.DataFrame(log_data[1:], columns=log_data[0])
     df = df.loc[(df['TRANSPORTADOR_TRACK'] == transportadora) & (df['FINALIZADOR'] == 'PENDENTE')] 
-    return df[['PEDIDO','STATUS PRAZO','DATA_ENTREGA_PREVISTA']]
+    return df[['PEDIDO','ROMANEIO','STATUS PRAZO','DATA_ENTREGA_PREVISTA']]
 
 
 def inserir_pedido(pedido, transportadora, motivo, observacao, filial):
