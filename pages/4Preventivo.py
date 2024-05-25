@@ -2,6 +2,7 @@ import streamlit as st
 from services.connect import preventivo
 import pandas as pd
 from io import StringIO
+import json
 
 
 def to_csv(df):
@@ -15,7 +16,6 @@ try:
 except:
     st.switch_page('./Login.py')
 
-st.write(st.secrets['KEY'])
 
 c1, c2 = st.columns(2)
 
