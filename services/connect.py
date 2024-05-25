@@ -23,7 +23,7 @@ json = {
 
 scope = ['https://spreadsheets.google.com/feeds',
         'https://www.googleapis.com/auth/drive'] 
-credentials = ServiceAccountCredentials.from_json_keyfile_name(
+credentials = ServiceAccountCredentials.from_json_keyfile_dict(
     json, scope)
 client = gs.authorize(credentials)
 drive_service = build('drive', 'v3', credentials=credentials)
