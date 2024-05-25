@@ -15,7 +15,7 @@ try:
 except:
     st.switch_page('./Login.py')
 
-st.write(['KEY'])
+st.write(st.secrets['KEY'])
 
 c1, c2 = st.columns(2)
 
