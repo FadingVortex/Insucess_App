@@ -28,10 +28,10 @@ credentials = ServiceAccountCredentials.from_json_keyfile_dict(
 client = gs.authorize(credentials)
 drive_service = build('drive', 'v3', credentials=credentials)
 
-base_insucessos = client.open_by_key('1SjqHE5LsPYCCldD7ZoXMKFrRGE1oD9FdhK7uHZ8S8Co').worksheet('Insucessos')
-base_cad = client.open_by_key('1SjqHE5LsPYCCldD7ZoXMKFrRGE1oD9FdhK7uHZ8S8Co').worksheet('CAD')
-base_devolucoes = client.open_by_key('1eqYyWwshEQPo0DpkhdgrG2ZLycJrj8kGprgRoHrnAGc').worksheet('Comprovantes')
-base_preventivo = client.open_by_key('1gPbStQWesvP3SyUB9r3RmiqHTKncrfFoOlCo_kzaRMU').worksheet('Base SQL')
+base_insucessos = client.open_by_key(st.secrets['base_insucessos']).worksheet('Insucessos')
+base_cad = client.open_by_key(st.secrets['base_insucessos']).worksheet('CAD')
+base_devolucoes = client.open_by_key(st.secrets['base_devolucoes']).worksheet('Comprovantes')
+base_preventivo = client.open_by_key(st.secrets['base_preventivo']).worksheet('Base SQL')
 
 
 def preventivo(transportadora):
