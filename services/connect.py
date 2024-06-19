@@ -33,6 +33,9 @@ base_cad = client.open_by_key(st.secrets['base_insucessos']).worksheet('CAD')
 base_devolucoes = client.open_by_key(st.secrets['base_devolucoes']).worksheet('Comprovantes')
 base_preventivo = client.open_by_key(st.secrets['base_preventivo']).worksheet('Base SQL')
 
+sheet = client.open_by_key(st.secrets['base_devolucoes'])
+base_saida = sheet.worksheet('Base_Len')
+hist_saida = sheet.worksheet('Histórico_Len')
 
 def preventivo(transportadora):
     log_data = base_preventivo.get_values('a1:q')
@@ -104,3 +107,39 @@ def registro_dev(pedido, transportadora, arq, destino):
         return 'Sucesso','Devolução registrada com sucesso.'
     except:
         return 'Erro', "Ocorreu um erro, favor tentar novamente."
+
+def consultar_pedidos_len( transportadora=0):
+    df = pd.DataFrame(base_saida.get_values('a2:h'))
+    df = df[[0,1,2,3,4,5,6,7]]
+    df.columns = ['Registro', 'Filial', 'Pedido', 'Transportadora', 'Lote', 'Nota', 'Ult_Atualização', 'Status']
+    df['Pedido'] =  df['Pedido'].astype(str)
+    df = df.loc[df['Transportadora'] == str(transportadora)]
+    return df
+
+def import_lote(transportadora = None, lote = 0):
+    try:
+        last_row = len(hist_saida.get_values('a:a')) + 1
+        df = pd.DataFrame(base_saida.get_values('c2:h'))
+        df = df.loc[(df[2] == str(lote)) & (df[5] == 'Solicitado')]
+        if df.empty:
+            return 'Lote já importado ou não existe.'
+        df[6] = 'Importado'
+        now = (datetime.now() - timedelta(hours=3)).strftime('%d/%m/%Y %H:%M:%S')
+        df[7] = now
+        df = df[[0,6,7,2]]
+        hist_saida.update(df.values.tolist(), 'a'+str(last_row),value_input_option='USER_ENTERED')
+        return 'Lote importado com sucesso!'
+    except:
+        return 'Erro ao importar Lote!'
+
+def update_status(pedido, transportadora, status):
+    try:
+        pedidos = base_saida.get_values('c2:c')
+        if [str(pedido)] not in pedidos:
+            return 'Pedido não existe'
+        last_row = len(hist_saida.get_values('a:a')) + 1
+        now = (datetime.now() - timedelta(hours=3)).strftime('%d/%m/%Y %H:%M:%S')
+        hist_saida.update( [[pedido, status, now, '', transportadora]] , 'a'+str(last_row),value_input_option='USER_ENTERED')
+        return 'Status atualizado'
+    except:
+        return 'Ocorreu um erro ao atualizar o status!'
