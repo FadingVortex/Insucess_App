@@ -1,6 +1,6 @@
 import streamlit as st
 import pandas as pd
-import services.connect as consultar_pedidos_len
+from services.connect import consultar_pedidos_len
 from time import sleep
 
 st.set_page_config(
