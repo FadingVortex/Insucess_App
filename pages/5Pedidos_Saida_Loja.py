@@ -9,7 +9,7 @@ st.set_page_config(
     layout="wide",  # Pode ser "wide" ou "centered"
     initial_sidebar_state="collapsed",  # Pode ser "auto", "expanded", ou "collapsed"
 )
-st.sidebar.page_link('./pages/HomeFilial.py', label='Home')
+st.sidebar.page_link('./pages/HomePage.py', label='Home')
 st.sidebar.page_link('./pages/Solicitação.py')
 
 try:
