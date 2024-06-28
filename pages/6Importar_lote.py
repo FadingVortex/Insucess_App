@@ -21,7 +21,7 @@ table = st.empty()
 
 with st.form("FormStatus"):
 
-    Ped = st.selectbox('Lotes',C.consulta_lotes())
+    Ped = st.selectbox('Lotes',C.consulta_lotes(st.session_state['Usuário']))
     button = st.form_submit_button('Consultar')
 
 if button:
