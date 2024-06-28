@@ -143,3 +143,11 @@ def update_status(pedido, transportadora, status):
         return 'Status atualizado'
     except:
         return 'Ocorreu um erro ao atualizar o status!'
+        
+def consulta_lotes():
+    lotes = base_saida.get_values('e2:e')
+    lotes_sem_duplicatas = list(set(tuple(sublist) for sublist in lotes))
+    lorrr = []
+    for errr in lotes_sem_duplicatas: 
+        lorrr.append(errr[0])
+    return lorrr
