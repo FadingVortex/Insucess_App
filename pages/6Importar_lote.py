@@ -30,4 +30,4 @@ if button:
 import_button = st.button("Importar Lote")
 
 if import_button and table.empty:
-    st.write(C.import_lote('Teste', Ped))
+    st.write(C.import_lote(st.session_state['Usuário'], Ped))
