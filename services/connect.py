@@ -151,3 +151,11 @@ def consulta_lotes():
     for errr in lotes_sem_duplicatas: 
         lorrr.append(errr[0])
     return lorrr
+
+def consultar_pedidos_importar(lote):
+    df = pd.DataFrame(base_saida.get_values('a2:h'))
+    df = df[[0,1,2,3,4,5,6,7]]
+    df.columns = ['Registro', 'Filial', 'Pedido', 'Transportadora', 'Lote', 'Nota', 'Ult_Atualização', 'Status']
+    df['Pedido'] =  df['Pedido'].astype(str)
+    df = df.loc[(df['Lote'] == str(lote)) & (df['Status'] == str('Solicitado'))]
+    return df
