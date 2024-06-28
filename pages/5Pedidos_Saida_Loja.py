@@ -9,7 +9,10 @@ st.set_page_config(
     layout="wide",  # Pode ser "wide" ou "centered"
     initial_sidebar_state="collapsed",  # Pode ser "auto", "expanded", ou "collapsed"
 )
-st.sidebar.page_link('./pages/HomePage.py', label='Home')
+c1, c2 = st.columns(2)
+
+c1.page_link('./pages/HomePage.py', label='Home')
+c2.page_link('./pages/6Importar_lote.py',label='Importar Lote')
 
 try:
     log = st.session_state['Login']
