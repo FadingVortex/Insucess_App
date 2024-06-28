@@ -126,7 +126,8 @@ def import_lote(transportadora = None, lote = 0):
         df[6] = 'Importado'
         now = (datetime.now() - timedelta(hours=3)).strftime('%d/%m/%Y %H:%M:%S')
         df[7] = now
-        df = df[[0,6,7,2]]
+        df[8] = transportadora
+        df = df[[0,6,7,2,8]]
         hist_saida.update(df.values.tolist(), 'a'+str(last_row),value_input_option='USER_ENTERED')
         return 'Lote importado com sucesso!'
     except:
