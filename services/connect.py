@@ -160,3 +160,25 @@ def consultar_pedidos_importar(lote):
     df['Pedido'] =  df['Pedido'].astype(str)
     df = df.loc[(df['Lote'] == str(lote)) & (df['Status'] == str('Solicitado'))]
     return df
+
+def consultar_pedidos_status(pedido):
+    df = pd.DataFrame(base_saida.get_values('a2:h'))
+    df = df[[0,1,2,3,4,5,6,7]]
+    df.columns = ['Registro', 'Filial', 'Pedido', 'Transportadora', 'Lote', 'Nota', 'Ult_Atualização', 'Status']
+    df['Pedido'] =  df['Pedido'].astype(str)
+    df = df.loc[(df['Pedido'] == str(pedido))]
+    return df
+
+def atualizar_status(df, status, trans):
+    try:
+        if df.empty:
+            return 'Sem pedido ativo'
+        last_row = len(hist_saida.get_values('a:a')) + 1
+        df['NOVO_STATUS'] = status
+        df['Carimbo'] = (datetime.now() - timedelta(hours=3)).strftime('%d/%m/%Y %H:%M:%S')
+        df['trans'] = trans
+        df = df[['Pedido', 'NOVO_STATUS', 'Carimbo', 'Lote', 'trans']]
+        hist_saida.update(df.values.tolist(), 'a'+str(last_row),value_input_option='USER_ENTERED')
+        return 'Status Atualizados'
+    except Exception as e:
+        return 'Erro ao registrar Status'
