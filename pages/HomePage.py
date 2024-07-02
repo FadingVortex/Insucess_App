@@ -15,6 +15,8 @@ c1.page_link('./pages/1Registro_insucesso.py', label='Registro de Insucesso')
 c1.page_link('./pages/3Registro_devolucao.py', label='Registro de Devolução')
 c2.page_link('./pages/4Preventivo.py', label='Preventivo')
 c2.page_link('./pages/5Pedidos_Saida_Loja.py', label='Pedidos Saída Loja')
+c2.page_link('./pages/7Atualizar_Status.py', label='Atualizar Status')
+
 
 st.markdown("""<div class="cores-container">
     <span class="cores-span amarelo"></span>
