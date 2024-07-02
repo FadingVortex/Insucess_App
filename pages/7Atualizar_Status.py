@@ -37,5 +37,5 @@ if button:
 import_button = st.button("Registrar Status")
 
 if import_button and table.empty:
-    st.write(C.atualizar_status(st.session_state['df'], status, 'teste'))
+    st.write(C.atualizar_status(st.session_state['df'], status, st.session_state['Usuário']))
     st.session_state['df'] = None
