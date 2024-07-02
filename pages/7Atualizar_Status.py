@@ -12,6 +12,12 @@ st.set_page_config(
 if 'df' not in st.session_state or st.session_state['df'] == None:
     st.session_state['df'] = pd.DataFrame()
 
+c1, c2 = st.columns(2)
+
+c1.page_link('./pages/HomePage.py', label='Home')
+c2.page_link('./pages/5Pedidos_Saida_Loja.py',label='Consultar Pedidos')
+
+
 st.title('Atualizar Status Pedido')
 
 table = st.empty()
