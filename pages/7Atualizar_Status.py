@@ -2,6 +2,11 @@ import streamlit as st
 import pandas as pd
 import services.connect as C
 
+try:
+    user = st.session_state['Usuário']
+except:
+    st.switch_page('./Login.py')
+
 st.set_page_config(
     page_title="Status dos Pedidos",
     page_icon=":chart_with_upwards_trend:",
