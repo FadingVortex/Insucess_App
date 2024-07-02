@@ -14,7 +14,7 @@ st.set_page_config(
     initial_sidebar_state="collapsed",  # Pode ser "auto", "expanded", ou "collapsed"
 )
 
-if 'df' not in st.session_state or st.session_state['df'] == None:
+if 'df' not in st.session_state:
     st.session_state['df'] = pd.DataFrame()
 
 c1, c2 = st.columns(2)
@@ -43,4 +43,4 @@ import_button = st.button("Registrar Status")
 
 if import_button and table.empty:
     st.write(C.atualizar_status(st.session_state['df'], status, st.session_state['Usuário']))
-    st.session_state['df'] = None
+    del st.session_state['df']
